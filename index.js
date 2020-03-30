@@ -23,7 +23,7 @@ bot.on(function (ctx){
 })
 server.use(bodyParser.json())
 
-server.post('/', )
+server.post('/', bot.listen)
 
 server.get('/', (request, response) => {
     request.header('Content-Type', 'application/json')
