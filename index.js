@@ -32,7 +32,8 @@ server.listen(PORT)
 let con = mysql.createConnection({
   host: "us-cdbr-iron-east-01.cleardb.net",
   user: "b09805f711cdac",
-  password: "c362ba82"
+  password: "c362ba82",
+database: "heroku_2cf38b0299dd81c"
 });
 
 con.connect(function(err) {
