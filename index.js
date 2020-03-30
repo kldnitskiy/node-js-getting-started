@@ -43,6 +43,8 @@ con.connect(function(err) {
 
 
 
+
+
 let sql = "INSERT INTO chatbot_data (vk_id, pair_id) VALUES (3, 4)";
   con.query(sql, function (err, result) {
     if (err) throw err;
