@@ -22,6 +22,9 @@ bot.on(function (user_message){
     console.log(user_message.body)
     user_message.reply('Привет')
 })
+bot.event('group_join', ({ reply }) => {
+  reply('Большое спасибо, что вступил в группу Мегабаттла! ')
+})
 server.use(bodyParser.json())
 
 server.post('/', bot.listen)
