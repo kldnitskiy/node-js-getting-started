@@ -1,13 +1,3 @@
-//const express = require('express')
-//const path = require('path')
-
-//
-//express()
-//  .use(express.static(path.join(__dirname, 'public')))
-//  .set('views', path.join(__dirname, 'views'))
-//  .set('view engine', 'ejs')
-//  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
-
 const express = require('express')
 const {Botact} = require('botact')
 const bodyParser = require('body-parser')
@@ -36,3 +26,16 @@ server.get('/', (request, response) => {
 })
 
 server.listen(PORT)
+
+let con = mysql.createConnection({
+  host: "us-cdbr-iron-east-01.cleardb.net",
+  user: "b09805f711cdac",
+  password: "c362ba82"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+});
+
+//mysql://b09805f711cdac:c362ba82@us-cdbr-iron-east-01.cleardb.net/heroku_2cf38b0299dd81c?reconnect=true
