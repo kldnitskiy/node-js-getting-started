@@ -1,6 +1,7 @@
 const express = require('express')
 const {Botact} = require('botact')
 const bodyParser = require('body-parser')
+const mysql = require('mysql')
 const server = express()
 const PORT = process.env.PORT || 5000
 const bot = new Botact({
