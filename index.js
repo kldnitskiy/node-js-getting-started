@@ -41,9 +41,34 @@ con.connect(function(err) {
   console.log("Connected!");
 });
 
-
-
-
+bot.command('start', (ctx) => {
+  // via shortcut from context
+  ctx.reply('Hi, this is start!')
+  // via shortcut with keyboard
+  ctx.reply('Yo, this is keyboard?', null, {
+    one_time: false,
+    buttons: [
+      [
+        {
+          action: {
+            type: 'text',
+            payload: {
+              button: 'Hello, world!'
+            },
+            label: 'Hello, world!'
+          },
+          color: 'primary'
+        }
+      ]
+    ]
+  })
+  // via function from context
+  ctx.sendMessage(ctx.user_id, 'Hi, this is start!')
+  // via function from instance
+  bot.reply(ctx.user_id, 'Hi, this is start!')
+  // to multiple users
+  bot.reply([ ctx.user_id, 1 ], 'Hi, this is start!')
+})
 
 let sql = "INSERT INTO chatbot_data (vk_id, pair_id) VALUES (3, 4)";
   con.query(sql, function (err, result) {
