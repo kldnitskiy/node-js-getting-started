@@ -18,8 +18,9 @@ const bot = new Botact({
     confirmation: 'f5f07863'
 })
 
-bot.on(function (ctx){
-    console.log(ctx.body)
+bot.on(function (user_message){
+    console.log(user_message.body)
+    user_message.reply('Привет')
 })
 server.use(bodyParser.json())
 
